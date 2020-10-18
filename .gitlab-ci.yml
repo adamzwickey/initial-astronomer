@@ -5,8 +5,8 @@ astro_deploy:
     - docker:dind
   script:
     - echo "Building container.."
-    - docker build -t registry.gcp0001.us-east4.astronomer.io/devoid-exoplanet-6124/airflow:CI-$CI_PIPELINE_IID .
+    - docker build -t registry.gcp0001.us-east4.astronomer.io/cislunar-molecular-1016/airflow:CI-$CI_PIPELINE_IID .
     - docker login registry.gcp0001.us-east4.astronomer.io -u _ -p ${SERVICE_ACCOUNT_KEY}
-    - docker push registry.gcp0001.us-east4.astronomer.io/devoid-exoplanet-6124/airflow:CI-$CI_PIPELINE_IID
+    - docker push registry.gcp0001.us-east4.astronomer.io/cislunar-molecular-1016/airflow:CI-$CI_PIPELINE_IID
   only:
     - master
