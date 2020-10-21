@@ -1,0 +1,22 @@
+airflowVersion: 1.10.12
+defaultAirflowRepository: registry.mgmt.tanzu.zwickey.net/library/airflow
+defaultAirflowTag: 8a0da78
+images:
+  airflow:
+    repository: registry.mgmt.tanzu.zwickey.net/library/airflow
+    tag: 8a0da78
+  flower:
+    repository: registry.mgmt.tanzu.zwickey.net/library/airflow
+    tag: 8a0da78
+ingress:
+  enabled: true
+  acme: true
+  baseDomain: airflow.workload1.tanzu.zwickey.net
+  tlsSecretName: airflow-tls
+  class: contour
+executor: CeleryExecutor
+workers:
+  keda:
+    enabled: true
+  persistence:
+    enabled: false
